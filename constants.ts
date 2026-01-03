@@ -108,7 +108,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: 2,
     title: "Chord AI",
     category: "Análisis Musical",
-    image: "https://images.unsplash.com/photo-1507838153414-b4b713384ebd?q=80&w=800&auto=format&fit=crop",
+    // Nueva imagen corregida: Visualización de audio digital/tecnología musical
+    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop",
     isNew: true,
     url: "https://chord-ia-89422266816.us-west1.run.app/"
   },
