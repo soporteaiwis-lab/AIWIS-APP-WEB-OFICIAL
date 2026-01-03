@@ -38,3 +38,11 @@ export interface PortfolioItem {
   image: string;
   isNew?: boolean;
 }
+
+export interface Technology {
+  id: string;
+  name: string;
+  category: string;
+  icon: string; // lucide icon name or simple text identifier
+  description: string;
+}
