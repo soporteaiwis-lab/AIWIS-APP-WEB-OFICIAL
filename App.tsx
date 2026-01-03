@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ConsultingSection from './components/ConsultingSection';
 import ProductsSection from './components/ProductsSection';
+import ClientsSection from './components/ClientsSection';
+import PortfolioSection from './components/PortfolioSection';
 import Footer from './components/Footer';
 import AiAssistant from './components/AiAssistant';
 
@@ -13,8 +15,10 @@ function App() {
       
       <main>
         <Hero />
+        <ClientsSection />
         <ConsultingSection />
         <ProductsSection />
+        <PortfolioSection />
       </main>
 
       <Footer />

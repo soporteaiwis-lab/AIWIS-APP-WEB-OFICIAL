@@ -24,3 +24,17 @@ export interface Product {
   features: ProductFeature[];
   image: string;
 }
+
+export interface Client {
+  name: string;
+  url: string;
+  initials: string;
+}
+
+export interface PortfolioItem {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  isNew?: boolean;
+}

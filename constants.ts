@@ -1,13 +1,21 @@
-import { ServicePhase, Product } from './types';
+import { ServicePhase, Product, Client, PortfolioItem } from './types';
 
 export const COMPANY_INFO = {
   name: "AIWIS",
   tagline: "Arquitectos de la Evolución Digital",
   ceo: "Armin Wildo Salazar San Martín",
   philosophy: "Innovar y evolucionar sin miedos. La revolución digital sin riesgos es evolución.",
-  description: "AIWIS es una empresa de tecnología e innovación orientada a democratizar y potenciar el uso de la Inteligencia Artificial (IA) en múltiples rubros y sectores productivos. Buscamos innovar en el día a día de las personas comunes y transformar oficios tradicionales.",
-  websites: ["www.simpledata.cl", "www.aiwis.cl"]
+  description: "AIWIS es una empresa de tecnología e innovación orientada a democratizar y potenciar el uso de la Inteligencia Artificial (IA) en múltiples rubros y sectores productivos.",
+  websites: ["www.aiwis.cl"] // Simpledata removed from here as requested
 };
+
+export const CLIENTS: Client[] = [
+  { name: "AFRI", url: "https://www.afri.cl", initials: "AF" },
+  { name: "ADA", url: "https://www.ada.cl", initials: "AD" },
+  { name: "SimpleData", url: "https://www.simpledata.cl", initials: "SD" },
+  { name: "UACh", url: "https://www.uach.cl", initials: "UA" },
+  { name: "Agile Scrum", url: "https://www.agile-scrum.cl", initials: "AS" }
+];
 
 export const CONSULTING_PHASES: ServicePhase[] = [
   {
@@ -39,8 +47,7 @@ export const PRODUCTS: Product[] = [
     title: "Ecosistema ARMONÍA",
     category: "Música y Entretenimiento",
     description: "Plataforma diseñada para evitar la obsolescencia de productores y músicos. Fusionamos la creatividad humana con algoritmos de composición y análisis acústico avanzado.",
-    // Image: Abstract sound waves / digital audio workstation vibe
-    image: "https://images.unsplash.com/photo-1614149162883-504ce4d13909?q=80&w=2574&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2670&auto=format&fit=crop",
     features: [
       { name: "Audio Lens", description: "Asistente experto en ingeniería de sonido." },
       { name: "Chord AI", description: "Detección y transcripción de armonías en tiempo real." },
@@ -53,8 +60,8 @@ export const PRODUCTS: Product[] = [
     title: "EDU LABS",
     category: "Transformación Educativa",
     description: "Estudio de Grabación Digital Educativo. Democratizamos el acceso a herramientas de producción de nivel profesional para colegios y liceos.",
-    // Image: Modern learning, technology in hands, blue tones
-    image: "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=2574&auto=format&fit=crop",
+    // Updated image to be more specific to recording studio/education
+    image: "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?q=80&w=2670&auto=format&fit=crop",
     features: [
       { name: "Ecosistema de Clases", description: "Herramientas para teoría musical y composición." },
       { name: "Acceso Democrático", description: "Tecnología de estudio profesional en el aula." }
@@ -65,12 +72,56 @@ export const PRODUCTS: Product[] = [
     title: "Soluciones Corporativas",
     category: "Alta Ingeniería & Legacy",
     description: "Soluciones de misión crítica para banca y grandes empresas. Modernización de sistemas legacy (COBOL) mediante agentes de IA autónomos.",
-    // Image: Data center, abstract network, cybersecurity
-    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2832&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop",
     features: [
       { name: "Apps Internas", description: "Centralización operativa y gestión de proyectos." },
       { name: "Multi-Agente COBOL GenAI", description: "Agentes para generar, mantener y migrar código COBOL legacy." }
     ]
+  }
+];
+
+export const PORTFOLIO_ITEMS: PortfolioItem[] = [
+  {
+    id: 1,
+    title: "Armonía Pro",
+    category: "Música & IA",
+    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop",
+    isNew: true
+  },
+  {
+    id: 2,
+    title: "Edu Studio",
+    category: "Educación",
+    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=800&auto=format&fit=crop",
+    isNew: true
+  },
+  {
+    id: 3,
+    title: "COBOL Agent",
+    category: "Banca",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    isNew: true
+  },
+  {
+    id: 4,
+    title: "Vision Labs",
+    category: "I+D",
+    image: "https://images.unsplash.com/photo-1535378437327-1e68d0437026?q=80&w=800&auto=format&fit=crop",
+    isNew: false
+  },
+  {
+    id: 5,
+    title: "Neural Core",
+    category: "Infraestructura",
+    image: "https://images.unsplash.com/photo-1558494949-ef526b01201b?q=80&w=800&auto=format&fit=crop",
+    isNew: false
+  },
+  {
+    id: 6,
+    title: "Próximamente",
+    category: "En Desarrollo",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
+    isNew: false
   }
 ];
 
@@ -79,6 +130,8 @@ You are the AI Assistant for AIWIS (Arquitectos de la Evolución Digital).
 CEO: Armin Wildo Salazar San Martín.
 Philosophy: "Innovar y evolucionar sin miedos. La revolución digital sin riesgos es evolución."
 Mission: Democratize AI, enhance human talent, prevent obsolescence.
+
+Clients: AFRI, ADA, SimpleData, UACh, Agile Scrum.
 
 Services:
 1. Consulting: 3 Phases (Adoption, Vibe Coding, Strategic Partner).

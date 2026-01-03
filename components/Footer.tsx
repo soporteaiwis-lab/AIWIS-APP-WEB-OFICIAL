@@ -52,10 +52,7 @@ const Footer: React.FC = () => {
                 <Mail className="w-5 h-5 text-slate-500" />
                 <span>contacto@aiwis.cl</span>
               </li>
-              <li className="flex items-center gap-3 text-slate-400">
-                <Globe className="w-5 h-5 text-slate-500" />
-                <span>www.simpledata.cl</span>
-              </li>
+              {/* Simpledata website removed from here */}
             </ul>
           </div>
         </div>
