@@ -38,8 +38,9 @@ export const PRODUCTS: Product[] = [
     id: "armonia",
     title: "Ecosistema ARMONÍA",
     category: "Música y Entretenimiento",
-    description: "Plataforma diseñada para evitar la obsolescencia de productores y músicos, convirtiendo a la IA en una herramienta creativa indispensable.",
-    image: "https://picsum.photos/800/600?grayscale",
+    description: "Plataforma diseñada para evitar la obsolescencia de productores y músicos. Fusionamos la creatividad humana con algoritmos de composición y análisis acústico avanzado.",
+    // Image: Abstract sound waves / digital audio workstation vibe
+    image: "https://images.unsplash.com/photo-1614149162883-504ce4d13909?q=80&w=2574&auto=format&fit=crop",
     features: [
       { name: "Audio Lens", description: "Asistente experto en ingeniería de sonido." },
       { name: "Chord AI", description: "Detección y transcripción de armonías en tiempo real." },
@@ -51,8 +52,9 @@ export const PRODUCTS: Product[] = [
     id: "edulabs",
     title: "EDU LABS",
     category: "Transformación Educativa",
-    description: "Estudio de Grabación Digital Educativo para revolucionar la educación artística en colegios y liceos.",
-    image: "https://picsum.photos/800/601?grayscale",
+    description: "Estudio de Grabación Digital Educativo. Democratizamos el acceso a herramientas de producción de nivel profesional para colegios y liceos.",
+    // Image: Modern learning, technology in hands, blue tones
+    image: "https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=2574&auto=format&fit=crop",
     features: [
       { name: "Ecosistema de Clases", description: "Herramientas para teoría musical y composición." },
       { name: "Acceso Democrático", description: "Tecnología de estudio profesional en el aula." }
@@ -62,8 +64,9 @@ export const PRODUCTS: Product[] = [
     id: "corporate",
     title: "Soluciones Corporativas",
     category: "Alta Ingeniería & Legacy",
-    description: "Soluciones de alto nivel para el sector empresarial robusto y banca.",
-    image: "https://picsum.photos/800/602?grayscale",
+    description: "Soluciones de misión crítica para banca y grandes empresas. Modernización de sistemas legacy (COBOL) mediante agentes de IA autónomos.",
+    // Image: Data center, abstract network, cybersecurity
+    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2832&auto=format&fit=crop",
     features: [
       { name: "Apps Internas", description: "Centralización operativa y gestión de proyectos." },
       { name: "Multi-Agente COBOL GenAI", description: "Agentes para generar, mantener y migrar código COBOL legacy." }

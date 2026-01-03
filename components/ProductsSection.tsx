@@ -1,64 +1,80 @@
 import React from 'react';
 import { PRODUCTS } from '../constants';
-import { Music, GraduationCap, Building2, CheckCircle2 } from 'lucide-react';
+import { Music, GraduationCap, Building2, CheckCircle2, ArrowUpRight } from 'lucide-react';
 
 const ProductsSection: React.FC = () => {
   return (
-    <section id="soluciones" className="py-24">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-            Ecosistema de <span className="gradient-text">Innovación</span>
+    <section id="soluciones" className="py-32 bg-aiwis-dark relative overflow-hidden">
+      {/* Grid Pattern Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="mb-24">
+          <h2 className="text-4xl md:text-7xl font-display font-bold mb-6">
+            Ecosistema de <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">Innovación</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Desde la música hasta la alta ingeniería bancaria. Soluciones prácticas y humanas.
+          <p className="text-slate-400 text-xl max-w-2xl">
+            Soluciones donde la creatividad humana se encuentra con la precisión de la máquina.
           </p>
         </div>
 
-        <div className="space-y-24">
+        <div className="space-y-32">
           {PRODUCTS.map((product, index) => {
             const isEven = index % 2 === 0;
             return (
-              <div key={product.id} className={`flex flex-col md:flex-row gap-12 items-center ${!isEven ? 'md:flex-row-reverse' : ''}`}>
+              <div key={product.id} className={`flex flex-col lg:flex-row gap-16 items-center ${!isEven ? 'lg:flex-row-reverse' : ''}`}>
                 
                 {/* Image / Visual Side */}
-                <div className="w-full md:w-1/2">
-                  <div className="relative rounded-2xl overflow-hidden border border-slate-800 group">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 mix-blend-overlay z-10"></div>
+                <div className="w-full lg:w-3/5 group">
+                  <div className="relative rounded-3xl overflow-hidden border border-slate-700/50 shadow-2xl bg-slate-800">
+                    {/* Image Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60 z-10"></div>
+                    
                     <img 
                       src={product.image} 
                       alt={product.title} 
-                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700" 
+                      className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 group-hover:saturate-150" 
                     />
-                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-slate-950 to-transparent z-20">
-                      <div className="flex items-center gap-2 text-cyan-400 mb-2">
-                        {product.id === 'armonia' && <Music className="w-5 h-5" />}
-                        {product.id === 'edulabs' && <GraduationCap className="w-5 h-5" />}
-                        {product.id === 'corporate' && <Building2 className="w-5 h-5" />}
-                        <span className="text-sm font-semibold uppercase tracking-wider">{product.category}</span>
+
+                    {/* Category Tag on Image */}
+                    <div className="absolute top-6 left-6 z-20">
+                       <div className="flex items-center gap-2 bg-slate-900/80 backdrop-blur-md border border-slate-700/50 px-4 py-2 rounded-full text-cyan-400">
+                        {product.id === 'armonia' && <Music className="w-4 h-4" />}
+                        {product.id === 'edulabs' && <GraduationCap className="w-4 h-4" />}
+                        {product.id === 'corporate' && <Building2 className="w-4 h-4" />}
+                        <span className="text-xs font-bold uppercase tracking-wider">{product.category}</span>
                       </div>
                     </div>
                   </div>
+                  {/* Floating Decor */}
+                  <div className={`hidden lg:block absolute w-full h-full top-4 ${isEven ? 'left-4' : '-left-4'} border border-slate-700 rounded-3xl -z-10`}></div>
                 </div>
 
                 {/* Content Side */}
-                <div className="w-full md:w-1/2">
-                  <h3 className="text-3xl font-bold text-white mb-4">{product.title}</h3>
-                  <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                <div className="w-full lg:w-2/5">
+                  <h3 className="text-4xl font-bold text-white mb-6 leading-tight">{product.title}</h3>
+                  <p className="text-slate-400 text-lg mb-10 leading-relaxed border-l-2 border-blue-500/50 pl-6">
                     {product.description}
                   </p>
 
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     {product.features.map((feature, idx) => (
-                      <div key={idx} className="flex gap-4 p-4 rounded-xl bg-slate-900/30 border border-slate-800 hover:border-slate-700 transition-colors">
-                        <CheckCircle2 className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <div key={idx} className="group flex gap-5 items-start">
+                        <div className="flex-shrink-0 mt-1 w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700 group-hover:border-blue-500 transition-colors">
+                            <CheckCircle2 className="w-5 h-5 text-blue-500" />
+                        </div>
                         <div>
-                          <h4 className="text-white font-semibold">{feature.name}</h4>
-                          <p className="text-slate-500 text-sm">{feature.description}</p>
+                          <h4 className="text-white font-semibold text-lg group-hover:text-blue-400 transition-colors">{feature.name}</h4>
+                          <p className="text-slate-500 text-sm mt-1">{feature.description}</p>
                         </div>
                       </div>
                     ))}
                   </div>
+
+                  <button className="mt-12 group flex items-center gap-2 text-white font-semibold border-b border-transparent hover:border-blue-500 transition-all pb-1">
+                    Explorar solución <ArrowUpRight className="w-5 h-5 text-blue-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
                 </div>
 
               </div>
