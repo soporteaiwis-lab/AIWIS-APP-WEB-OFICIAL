@@ -4,7 +4,7 @@ import { ExternalLink } from 'lucide-react';
 
 const ClientsSection: React.FC = () => {
   return (
-    <section className="py-20 border-t border-slate-900 bg-slate-950">
+    <section className="py-20 border-t border-slate-900 bg-slate-950 relative z-20 shadow-lg">
       <div className="container mx-auto px-6">
         <p className="text-center text-slate-500 text-sm font-semibold tracking-widest uppercase mb-12">
           Confían en nuestra evolución
@@ -19,7 +19,7 @@ const ClientsSection: React.FC = () => {
               rel="noopener noreferrer"
               className="group relative flex items-center justify-center"
             >
-              <div className="w-32 h-16 md:w-40 md:h-20 bg-slate-900/50 border border-slate-800 rounded-xl flex items-center justify-center group-hover:border-blue-500/50 group-hover:bg-slate-900 transition-all duration-300 relative overflow-hidden">
+              <div className="w-32 h-16 md:w-40 md:h-20 bg-slate-900/50 border border-slate-800 rounded-xl flex items-center justify-center group-hover:border-blue-500/50 group-hover:bg-slate-900 transition-all duration-300 relative overflow-hidden shadow-sm">
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 

@@ -23,6 +23,7 @@ export interface Product {
   description: string;
   features: ProductFeature[];
   image: string;
+  link?: string; // Added for live app links
 }
 
 export interface Client {
@@ -37,12 +38,13 @@ export interface PortfolioItem {
   category: string;
   image: string;
   isNew?: boolean;
+  url?: string; // Added for live app links
 }
 
 export interface Technology {
   id: string;
   name: string;
   category: string;
-  icon: string; // lucide icon name or simple text identifier
+  icon: string;
   description: string;
 }

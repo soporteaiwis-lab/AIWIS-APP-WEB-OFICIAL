@@ -72,9 +72,16 @@ const ProductsSection: React.FC = () => {
                     ))}
                   </div>
 
-                  <button className="mt-12 group flex items-center gap-2 text-white font-semibold border-b border-transparent hover:border-blue-500 transition-all pb-1">
-                    Explorar solución <ArrowUpRight className="w-5 h-5 text-blue-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </button>
+                  {product.link && (
+                    <a 
+                      href={product.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-12 group flex items-center gap-2 text-white font-semibold border-b border-transparent hover:border-blue-500 transition-all pb-1 inline-flex"
+                    >
+                      Explorar solución <ArrowUpRight className="w-5 h-5 text-blue-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </a>
+                  )}
                 </div>
 
               </div>
