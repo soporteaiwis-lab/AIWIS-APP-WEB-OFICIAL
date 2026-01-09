@@ -1,119 +1,151 @@
-import React, { useRef } from 'react';
-import { PORTFOLIO_ITEMS } from '../constants';
-import { Play, Plus, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { INNOVATION_PROJECTS } from '../constants';
+import { Play, Info, ChevronLeft, ChevronRight, FlaskConical, ExternalLink } from 'lucide-react';
 
 const PortfolioSection: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+
+  // We'll use the first item as the "Featured" Hero item (Netflix style)
+  const featuredProject = INNOVATION_PROJECTS[0];
+  const carouselProjects = INNOVATION_PROJECTS.slice(1);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = direction === 'left' ? -400 : 400;
+      const scrollAmount = direction === 'left' ? -500 : 500;
       current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="py-20 bg-aiwis-dark overflow-hidden group/section">
-      <div className="container mx-auto px-6 mb-8">
-        <h2 className="text-3xl font-display font-bold text-white mb-2">Universo AIWIS</h2>
-        <p className="text-slate-400 text-sm">Explora nuestra cartelera de innovación en constante expansión.</p>
-      </div>
-
-      {/* Slider Container with Navigation Buttons */}
-      <div className="relative w-full">
+    <section className="bg-aiwis-dark pb-20 pt-10 overflow-hidden relative">
         
-        {/* Left Navigation Button */}
-        <button 
-          onClick={() => scroll('left')}
-          className="absolute left-0 top-0 bottom-0 z-30 w-16 bg-gradient-to-r from-black/80 to-transparent flex items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 focus:outline-none"
-        >
-          <ChevronLeft className="w-10 h-10 text-white hover:scale-125 transition-transform drop-shadow-lg" />
-        </button>
-
-        {/* Scrollable Area */}
-        <div 
-          ref={scrollRef}
-          className="flex overflow-x-auto gap-4 px-6 pb-8 snap-x snap-mandatory scrollbar-hide scroll-smooth" 
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {PORTFOLIO_ITEMS.map((item) => {
-            const CardContent = (
-              <div className="relative aspect-video rounded-lg overflow-hidden border border-slate-800 transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-500/50 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] z-10 group-hover:z-20 bg-slate-900">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                />
-                
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-
-                {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 w-full p-4 transform transition-transform duration-300 translate-y-2 group-hover:translate-y-0">
-                  <div className="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
-                    <button className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center hover:bg-cyan-400 transition-colors">
-                      {item.url ? <ExternalLink className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current" />}
-                    </button>
-                    {!item.url && (
-                        <button className="w-8 h-8 rounded-full border border-slate-400 text-slate-200 flex items-center justify-center hover:border-white hover:text-white transition-colors">
-                        <Plus className="w-4 h-4" />
-                        </button>
-                    )}
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">{item.title}</h3>
-                  
-                  <div className="flex items-center gap-3 text-xs font-medium">
-                    {item.isNew && (
-                      <span className="text-green-400 font-bold uppercase tracking-wider">Nuevo</span>
-                    )}
-                    <span className="text-slate-300">{item.category}</span>
-                  </div>
+        {/* SECTION HEADER */}
+        <div className="container mx-auto px-6 mb-8 flex items-end gap-4">
+             <div>
+                <div className="flex items-center gap-2 mb-2 text-cyan-400">
+                    <FlaskConical className="w-5 h-5" />
+                    <span className="text-sm font-display font-bold tracking-widest uppercase">Research & Development</span>
                 </div>
-              </div>
-            );
-
-            return (
-              <div 
-                key={item.id} 
-                className="flex-none w-[280px] md:w-[350px] snap-center group relative cursor-pointer"
-              >
-                {item.url ? (
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="block h-full">
-                        {CardContent}
-                    </a>
-                ) : (
-                    CardContent
-                )}
-              </div>
-            );
-          })}
-          
-          {/* Add Placeholder Card */}
-          <div className="flex-none w-[280px] md:w-[350px] snap-center flex items-center justify-center border-2 border-dashed border-slate-800 rounded-lg hover:border-slate-600 transition-colors cursor-pointer group bg-slate-900/30">
-            <div className="text-center">
-              <Plus className="w-12 h-12 text-slate-700 mx-auto mb-2 group-hover:text-blue-500 transition-colors" />
-              <p className="text-slate-600 font-medium group-hover:text-slate-400 transition-colors">Cargando futuro...</p>
-            </div>
-          </div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white">AIWIS <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">INNOVATION LABS</span></h2>
+             </div>
         </div>
 
-        {/* Right Navigation Button */}
+      {/* FEATURED HERO PROJECT (Netflix Banner Style) */}
+      <div className="relative w-full h-[500px] md:h-[600px] mb-12 group">
+        <div className="absolute inset-0">
+          <img 
+            src={featuredProject.image} 
+            alt={featuredProject.title} 
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-aiwis-dark via-aiwis-dark/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-aiwis-dark via-aiwis-dark/80 to-transparent"></div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 w-full p-6 md:p-16 z-20 flex flex-col justify-end h-full max-w-4xl">
+           <span className="inline-block px-3 py-1 bg-cyan-500/20 border border-cyan-500/50 text-cyan-400 text-xs font-bold rounded mb-4 w-fit backdrop-blur-md">
+              {featuredProject.badge?.toUpperCase()}
+           </span>
+           <h3 className="text-5xl md:text-7xl font-display font-bold text-white mb-4 leading-none tracking-tight">
+             {featuredProject.title}
+           </h3>
+           <p className="text-xl md:text-2xl text-slate-300 font-light mb-8 max-w-2xl font-sans">
+             {featuredProject.description}
+           </p>
+           
+           <div className="flex gap-4">
+              <a 
+                href={featuredProject.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-white text-black font-bold rounded hover:bg-slate-200 transition-colors flex items-center gap-2 text-lg"
+              >
+                <Play className="w-5 h-5 fill-black" />
+                Ejecutar Prototipo
+              </a>
+              <button className="px-8 py-3 bg-slate-600/60 text-white font-bold rounded backdrop-blur-md hover:bg-slate-500/60 transition-colors flex items-center gap-2 text-lg">
+                <Info className="w-5 h-5" />
+                Más Información
+              </button>
+           </div>
+        </div>
+      </div>
+
+      {/* CAROUSEL SECTION */}
+      <div className="relative group/slider px-4 md:px-12">
+        <h4 className="text-white font-display font-semibold text-xl mb-4 pl-2">Explorar Universo de Prototipos</h4>
+        
+        {/* Navigation Buttons */}
+        <button 
+          onClick={() => scroll('left')}
+          className="hidden md:flex absolute left-0 top-0 bottom-0 z-40 w-12 bg-black/50 hover:bg-black/80 items-center justify-center text-white opacity-0 group-hover/slider:opacity-100 transition-all duration-300"
+        >
+          <ChevronLeft className="w-8 h-8" />
+        </button>
         <button 
           onClick={() => scroll('right')}
-          className="absolute right-0 top-0 bottom-0 z-30 w-16 bg-gradient-to-l from-black/80 to-transparent flex items-center justify-center opacity-0 group-hover/section:opacity-100 transition-opacity duration-300 focus:outline-none"
+          className="hidden md:flex absolute right-0 top-0 bottom-0 z-40 w-12 bg-black/50 hover:bg-black/80 items-center justify-center text-white opacity-0 group-hover/slider:opacity-100 transition-all duration-300"
         >
-          <ChevronRight className="w-10 h-10 text-white hover:scale-125 transition-transform drop-shadow-lg" />
+          <ChevronRight className="w-8 h-8" />
         </button>
+
+        {/* Scroll Container */}
+        <div 
+          ref={scrollRef}
+          className="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth py-8 px-2"
+          style={{ scrollPaddingLeft: '2rem' }}
+        >
+          {carouselProjects.map((project) => (
+            <div 
+              key={project.id}
+              className="flex-none w-[280px] md:w-[320px] relative transition-all duration-300 hover:scale-105 hover:z-30 cursor-pointer group/card"
+              onMouseEnter={() => setHoveredId(project.id)}
+              onMouseLeave={() => setHoveredId(null)}
+            >
+              <a href={project.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                  <div className="aspect-video rounded-md overflow-hidden bg-slate-800 relative shadow-lg group-hover/card:shadow-cyan-500/20">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/card:brightness-110"
+                    />
+                    
+                    {/* Badge */}
+                    {project.badge && (
+                        <div className="absolute top-2 right-2 px-2 py-0.5 bg-black/60 backdrop-blur text-white text-[10px] font-bold uppercase tracking-wider rounded border border-white/10">
+                            {project.badge}
+                        </div>
+                    )}
+
+                    {/* Content Overlay (Appears on Hover usually, or static for simplicity in mobile) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <div className="transform translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
+                             <div className="flex items-center gap-2 mb-2">
+                                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                                    <Play className="w-4 h-4 fill-black text-black" />
+                                </div>
+                                <span className="text-white font-display font-bold uppercase text-xs tracking-wider border border-white/30 px-2 py-1 rounded">
+                                    {project.category}
+                                </span>
+                             </div>
+                             <h4 className="text-white font-bold font-display text-lg leading-tight">{project.title}</h4>
+                             <p className="text-slate-300 text-xs mt-1 line-clamp-2 font-sans">{project.description}</p>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  {/* Title below card (visible when not hovered, hides when hovered to reduce clutter if expanded, or stays) */}
+                  <div className="mt-2 group-hover/card:opacity-50 transition-opacity px-1">
+                      <h5 className="text-slate-200 font-semibold text-sm">{project.title}</h5>
+                  </div>
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
-      
-      {/* Hide Scrollbar Style for Webkit */}
-      <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-      `}</style>
     </section>
   );
 };

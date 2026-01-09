@@ -23,7 +23,7 @@ export interface Product {
   description: string;
   features: ProductFeature[];
   image: string;
-  link?: string; // Added for live app links
+  link?: string;
 }
 
 export interface Client {
@@ -38,7 +38,18 @@ export interface PortfolioItem {
   category: string;
   image: string;
   isNew?: boolean;
-  url?: string; // Added for live app links
+  url?: string;
+}
+
+export interface InnovationProject {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  category: 'Audio' | 'Education' | 'Corporate' | 'Development' | 'Research';
+  image: string;
+  url: string;
+  badge?: 'Prototype' | 'Beta' | 'New' | 'Vision' | 'Research';
 }
 
 export interface Technology {

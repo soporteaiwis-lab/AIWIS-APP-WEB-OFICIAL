@@ -1,4 +1,4 @@
-import { ServicePhase, Product, Client, PortfolioItem, Technology } from './types';
+import { ServicePhase, Product, Client, PortfolioItem, InnovationProject, Technology } from './types';
 
 export const COMPANY_INFO = {
   name: "AIWIS",
@@ -88,62 +88,116 @@ export const PRODUCTS: Product[] = [
   }
 ];
 
+// LISTADO MAESTRO DE PROYECTOS DE INNOVACIÓN (Netflix Style Data)
+export const INNOVATION_PROJECTS: InnovationProject[] = [
+  {
+    id: "morpho",
+    title: "Morpho Stereo",
+    subtitle: "DSP Audio Transformer",
+    description: "Prototipo de procesamiento de señal digital (DSP) que transforma ondas de audio mono a estéreo espacial mediante IA.",
+    category: "Audio",
+    badge: "Prototype",
+    image: "https://images.unsplash.com/photo-1558486012-817176f84c6d?q=80&w=2570&auto=format&fit=crop", // Sound waves
+    url: "https://morphostereo-dsp-prototype-89422266816.us-west1.run.app"
+  },
+  {
+    id: "chord-ia",
+    title: "Chord IA",
+    subtitle: "Real-time Harmony Analysis",
+    description: "Analiza canciones y genera armonía de acordes en tiempo real. Herramienta esencial para músicos y productores modernos.",
+    category: "Audio",
+    badge: "New",
+    image: "https://images.unsplash.com/photo-1507838153414-b4b713384ebd?q=80&w=2670&auto=format&fit=crop", // Musician/Studio
+    url: "https://copy-of-chord-ia-89422266816.us-west1.run.app"
+  },
+  {
+    id: "aiwis-master",
+    title: "MasterAcademy Phase 2",
+    subtitle: "Corporate Adoption Portal",
+    description: "Plataforma central de AIWIS para la capacitación y adopción corporativa de Inteligencia Artificial.",
+    category: "Education",
+    badge: "Beta",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2670&auto=format&fit=crop", // Matrix/Code
+    url: "https://aiwis-training-portal-phase-2-ai-adoption-89422266816.us-west1.run.app"
+  },
+  {
+    id: "armonia-platform",
+    title: "Armonía Platform",
+    subtitle: "Music Industry Hub",
+    description: "Potenciando a músicos, sonidistas e iluminadores para integrar IA en sus flujos de trabajo creativos.",
+    category: "Research",
+    badge: "Vision",
+    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2670&auto=format&fit=crop", // Piano/Studio
+    url: "https://copy-of-armonia-hub-v17-89422266816.us-west1.run.app"
+  },
+  {
+    id: "edu-studio",
+    title: "Edu Studio Labs",
+    subtitle: "Interactive Music Education",
+    description: "Estudio de grabación virtual para colegios. Permite a profesores y alumnos realizar clases de música interactivas.",
+    category: "Education",
+    badge: "New",
+    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2670&auto=format&fit=crop", // Club/Music
+    url: "https://edustudio-modular-89422266816.us-west1.run.app"
+  },
+  {
+    id: "sd-corp",
+    title: "SimpleData Space",
+    subtitle: "Corporate Project Manager",
+    description: "Prototipo de gestión de proyectos corporativos impulsado por IA para SimpleData.",
+    category: "Corporate",
+    badge: "Prototype",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2669&auto=format&fit=crop", // Modern Office
+    url: "https://sd-spaceproyectos-89422266816.us-west1.run.app"
+  },
+  {
+    id: "academy-dev",
+    title: "Academy Developer",
+    subtitle: "Portal Builder",
+    description: "Plataforma meta-herramienta para la creación automatizada de portales corporativos de capacitación.",
+    category: "Development",
+    badge: "Research",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop", // Coding screen
+    url: "https://aiwis-master-portals-ia-89422266816.us-west1.run.app"
+  },
+  {
+    id: "afri-portal",
+    title: "AFRI Portal",
+    subtitle: "Client Academy",
+    description: "Portal dedicado para la adopción de IA corporativa del cliente AFRI.",
+    category: "Corporate",
+    badge: "Beta",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2670&auto=format&fit=crop", // Business team
+    url: "https://afri-portal-89422266816.us-west1.run.app"
+  },
+  {
+    id: "ada-portal",
+    title: "ADA Academy",
+    subtitle: "Client Academy",
+    description: "Portal dedicado para la adopción de IA corporativa del cliente ADA.",
+    category: "Corporate",
+    badge: "Beta",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop", // Meeting
+    url: "https://ada-ia-portal-89422266816.us-west1.run.app"
+  },
+  {
+    id: "sd-portal",
+    title: "SimpleData Academy",
+    subtitle: "Client Academy",
+    description: "Portal de capacitación y adopción tecnológica para SimpleData.",
+    category: "Corporate",
+    badge: "Beta",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop", // Skyscrappers
+    url: "https://simpledata-portal-89422266816.us-west1.run.app"
+  }
+];
+
+
 export const TECHNOLOGIES: Technology[] = [
   { id: "google", name: "Google Integrations", category: "Ecosistema", icon: "Cloud", description: "Integración nativa con Google Cloud y Workspace." },
   { id: "gemini", name: "Gemini AI", category: "Inteligencia", icon: "Brain", description: "Potencia de modelos multimodales 1.5 y 2.0." },
   { id: "data", name: "Data Management", category: "Infraestructura", icon: "Database", description: "Procesamiento y análisis de datos a gran escala." },
   { id: "agents", name: "Autonomous Agents", category: "Automatización", icon: "Bot", description: "Agentes inteligentes para tareas complejas." }
-];
-
-export const PORTFOLIO_ITEMS: PortfolioItem[] = [
-  {
-    id: 1,
-    title: "Armonía Hub",
-    category: "Plataforma Oficial",
-    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800&auto=format&fit=crop",
-    isNew: true,
-    url: "https://copy-of-armonia-hub-v17-89422266816.us-west1.run.app/"
-  },
-  {
-    id: 2,
-    title: "Chord AI",
-    category: "Análisis Musical",
-    // Nueva imagen corregida: Visualización de audio digital/tecnología musical
-    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop",
-    isNew: true,
-    url: "https://chord-ia-89422266816.us-west1.run.app/"
-  },
-  {
-    id: 3,
-    title: "Edu Studio",
-    category: "Educación Digital",
-    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=800&auto=format&fit=crop",
-    isNew: true,
-    url: "https://edustudio-modular-89422266816.us-west1.run.app/"
-  },
-  {
-    id: 4,
-    title: "Afri Portal",
-    category: "Adopción IA",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
-    isNew: true,
-    url: "https://afri-portal-89422266816.us-west1.run.app/"
-  },
-  {
-    id: 5,
-    title: "SimpleData Corp",
-    category: "Gestión Corporativa",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
-    isNew: true,
-    url: "https://simpledata-corporate-portal-89422266816.us-west1.run.app/"
-  },
-  {
-    id: 6,
-    title: "Vision Labs",
-    category: "I+D",
-    image: "https://images.unsplash.com/photo-1535378437327-1e68d0437026?q=80&w=800&auto=format&fit=crop",
-    isNew: false
-  }
 ];
 
 export const AI_SYSTEM_INSTRUCTION = `
@@ -161,6 +215,13 @@ Services:
 3. Edu Labs: Educational recording studio for schools.
 4. Corporate: Internal apps and COBOL GenAI Agents for banking/legacy.
 5. Technology: Google Cloud, Gemini, Data Management.
+
+Innovation Labs Projects:
+- Morpho Stereo (DSP)
+- Chord IA (Music Analysis)
+- MasterAcademy (Training)
+- Edu Studio Labs (Education)
+- Academy Developer (Portal Builder)
 
 Answer questions politely, professionally, and briefly in Spanish. Be empathetic and educational.
 `;
