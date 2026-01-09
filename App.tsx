@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import ConsultingSection from './components/ConsultingSection';
 import ProductsSection from './components/ProductsSection';
 import ClientSolutionsSection from './components/ClientSolutionsSection';
-import ClientsSection from './components/ClientsSection';
 import PortfolioSection from './components/PortfolioSection';
 import PhilosophySection from './components/PhilosophySection';
 import TechStackSection from './components/TechStackSection';
@@ -14,19 +13,17 @@ import AiAssistant from './components/AiAssistant';
 
 function App() {
   return (
-    <div className="min-h-screen bg-aiwis-dark text-slate-200 selection:bg-blue-500/30 scroll-smooth">
+    <div className="min-h-screen bg-[#172554] text-slate-200 selection:bg-rose-500/30 scroll-smooth font-sans">
       <Navbar />
       
       <main>
         <Hero />
-        <ClientsSection /> {/* Logos de confianza */}
-        <PhilosophySection />
         
-        {/* Bloque 1: Servicios */}
-        <ConsultingSection />
-        
-        {/* Bloque 2: Productos Propios */}
+        {/* Bloque 1: Soluciones/Productos (Destacado) */}
         <ProductsSection />
+
+        {/* Bloque 2: Metodología */}
+        <ConsultingSection />
         
         {/* Bloque 3: Acceso Clientes (B2B) */}
         <ClientSolutionsSection />
@@ -34,6 +31,7 @@ function App() {
         {/* Bloque 4: I+D (Netflix Style) */}
         <PortfolioSection />
         
+        <PhilosophySection />
         <TechStackSection />
         <ContactSection />
       </main>

@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AIWIS | Arquitectos de la Evolución Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- New Fonts: Rajdhani (Tech/Futuristic) & Outfit (Modern/Clean) -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts: Outfit (Primary) & Rajdhani (Headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
               sans: ['Outfit', 'sans-serif'],
-              display: ['Rajdhani', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'], // Switched to Outfit for headings too for cleaner Corporate look
             },
             colors: {
               aiwis: {
-                dark: '#030712', // Darker, deeper black/blue
-                card: '#0F172A',
-                primary: '#3B82F6',
-                accent: '#8B5CF6',
-                cyan: '#06B6D4'
+                base: '#1e3a8a', // Royal Blue base
+                dark: '#0f172a', // Darker navy
+                light: '#3b82f6',
+                accent: '#f43f5e', // Rose/Red accent like the reference button
               }
             },
-            animation: {
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            backgroundImage: {
+              'hero-gradient': 'linear-gradient(135deg, #1e3a8a 0%, #172554 100%)',
+              'card-gradient': 'linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
             }
           }
         }
@@ -33,22 +33,20 @@
     </script>
     <style>
       body {
-        background-color: #030712;
+        background-color: #172554; /* Deep Blue background */
         color: #F8FAFC;
       }
-      .gradient-text {
-        background: linear-gradient(to right, #3B82F6, #8B5CF6, #06B6D4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
-      /* Hide scrollbar for Chrome, Safari and Opera */
       .no-scrollbar::-webkit-scrollbar {
           display: none;
       }
-      /* Hide scrollbar for IE, Edge and Firefox */
       .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          -ms-overflow-style: none;
+          scrollbar-width: none;
       }
     </style>
   <script type="importmap">
