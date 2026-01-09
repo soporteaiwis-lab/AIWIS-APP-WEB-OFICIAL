@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { INNOVATION_PROJECTS } from '../constants';
-import { Play, Info, ChevronLeft, ChevronRight, FlaskConical, ExternalLink } from 'lucide-react';
+import { Play, Info, ChevronLeft, ChevronRight, FlaskConical } from 'lucide-react';
 
 const PortfolioSection: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ const PortfolioSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-aiwis-dark pb-20 pt-10 overflow-hidden relative">
+    <section id="labs" className="bg-aiwis-dark pb-20 pt-10 overflow-hidden relative border-t border-slate-900">
         
         {/* SECTION HEADER */}
         <div className="container mx-auto px-6 mb-8 flex items-end gap-4">
@@ -66,10 +66,6 @@ const PortfolioSection: React.FC = () => {
                 <Play className="w-5 h-5 fill-black" />
                 Ejecutar Prototipo
               </a>
-              <button className="px-8 py-3 bg-slate-600/60 text-white font-bold rounded backdrop-blur-md hover:bg-slate-500/60 transition-colors flex items-center gap-2 text-lg">
-                <Info className="w-5 h-5" />
-                Más Información
-              </button>
            </div>
         </div>
       </div>
@@ -120,7 +116,7 @@ const PortfolioSection: React.FC = () => {
                         </div>
                     )}
 
-                    {/* Content Overlay (Appears on Hover usually, or static for simplicity in mobile) */}
+                    {/* Content Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                         <div className="transform translate-y-4 group-hover/card:translate-y-0 transition-transform duration-300">
                              <div className="flex items-center gap-2 mb-2">
@@ -135,11 +131,6 @@ const PortfolioSection: React.FC = () => {
                              <p className="text-slate-300 text-xs mt-1 line-clamp-2 font-sans">{project.description}</p>
                         </div>
                     </div>
-                  </div>
-                  
-                  {/* Title below card (visible when not hovered, hides when hovered to reduce clutter if expanded, or stays) */}
-                  <div className="mt-2 group-hover/card:opacity-50 transition-opacity px-1">
-                      <h5 className="text-slate-200 font-semibold text-sm">{project.title}</h5>
                   </div>
               </a>
             </div>

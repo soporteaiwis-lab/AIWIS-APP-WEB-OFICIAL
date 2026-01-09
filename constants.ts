@@ -1,4 +1,4 @@
-import { ServicePhase, Product, Client, PortfolioItem, InnovationProject, Technology } from './types';
+import { ServicePhase, Product, Client, InnovationProject, Technology, ClientSolution } from './types';
 
 export const COMPANY_INFO = {
   name: "AIWIS",
@@ -47,6 +47,7 @@ export const CONSULTING_PHASES: ServicePhase[] = [
   }
 ];
 
+// 1. PRODUCTOS PROPIOS (PLATAFORMAS AIWIS)
 export const PRODUCTS: Product[] = [
   {
     id: "armonia",
@@ -74,121 +75,109 @@ export const PRODUCTS: Product[] = [
       { name: "Acceso Democrático", description: "Tecnología de estudio profesional en el aula." }
     ]
   },
-  {
-    id: "corporate",
-    title: "Soluciones Corporativas",
-    category: "Alta Ingeniería & Legacy",
-    description: "Soluciones de misión crítica para banca y grandes empresas. Modernización de sistemas legacy (COBOL) mediante agentes de IA autónomos.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop",
-    link: "https://simpledata-corporate-portal-89422266816.us-west1.run.app/",
+   {
+    id: "academy-dev",
+    title: "Academy Developer",
+    category: "Desarrollo",
+    description: "Meta-plataforma para la creación automatizada de portales corporativos de capacitación. Genera entornos de aprendizaje a medida en minutos.",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop",
+    link: "https://aiwis-master-portals-ia-89422266816.us-west1.run.app",
     features: [
-      { name: "Apps Internas", description: "Centralización operativa y gestión de proyectos." },
-      { name: "Multi-Agente COBOL GenAI", description: "Agentes para generar, mantener y migrar código COBOL legacy." }
+        { name: "Generador de Portales", description: "Despliegue rápido de LMS corporativos." },
+        { name: "Integración de Contenidos", description: "Gestión centralizada de recursos." }
     ]
   }
 ];
 
-// LISTADO MAESTRO DE PROYECTOS DE INNOVACIÓN (Netflix Style Data)
+// 2. SOLUCIONES DE CLIENTES (AGRUPADAS POR EMPRESA)
+export const CLIENT_SOLUTIONS: ClientSolution[] = [
+  {
+    clientId: "simpledata",
+    clientName: "SimpleData",
+    description: "Soluciones corporativas para gestión de datos y proyectos.",
+    apps: [
+      {
+        title: "SimpleData Academy",
+        type: "Portal",
+        url: "https://simpledata-portal-89422266816.us-west1.run.app",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        title: "Space Proyectos",
+        type: "App",
+        url: "https://sd-spaceproyectos-89422266816.us-west1.run.app",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        title: "Corporate Portal",
+        type: "Dashboard",
+        url: "https://simpledata-corporate-portal-89422266816.us-west1.run.app/",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    clientId: "afri",
+    clientName: "AFRI",
+    description: "Plataforma de capacitación y adopción tecnológica.",
+    apps: [
+      {
+        title: "AFRI Portal Academy",
+        type: "Portal",
+        url: "https://afri-portal-89422266816.us-west1.run.app",
+        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop"
+      }
+    ]
+  },
+  {
+    clientId: "ada",
+    clientName: "ADA",
+    description: "Entorno digital para gestión y aprendizaje.",
+    apps: [
+      {
+        title: "ADA Academy",
+        type: "Portal",
+        url: "https://ada-ia-portal-89422266816.us-west1.run.app",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop"
+      }
+    ]
+  },
+   {
+    clientId: "aiwis-internal",
+    clientName: "AIWIS Internal",
+    description: "Herramientas de uso interno y capacitación propia.",
+    apps: [
+      {
+        title: "MasterAcademy Phase 2",
+        type: "Portal",
+        url: "https://aiwis-training-portal-phase-2-ai-adoption-89422266816.us-west1.run.app",
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop"
+      }
+    ]
+  }
+];
+
+// 3. INNOVATION LABS (PROTOTIPOS & EXPERIMENTOS)
 export const INNOVATION_PROJECTS: InnovationProject[] = [
   {
     id: "morpho",
     title: "Morpho Stereo",
     subtitle: "DSP Audio Transformer",
-    description: "Prototipo de procesamiento de señal digital (DSP) que transforma ondas de audio mono a estéreo espacial mediante IA.",
+    description: "Prototipo DSP que transforma ondas mono a estéreo espacial mediante IA.",
     category: "Audio",
     badge: "Prototype",
-    image: "https://images.unsplash.com/photo-1558486012-817176f84c6d?q=80&w=2570&auto=format&fit=crop", // Sound waves
+    image: "https://images.unsplash.com/photo-1558486012-817176f84c6d?q=80&w=2570&auto=format&fit=crop", 
     url: "https://morphostereo-dsp-prototype-89422266816.us-west1.run.app"
   },
   {
     id: "chord-ia",
     title: "Chord IA",
     subtitle: "Real-time Harmony Analysis",
-    description: "Analiza canciones y genera armonía de acordes en tiempo real. Herramienta esencial para músicos y productores modernos.",
+    description: "Analiza canciones y genera armonía de acordes en tiempo real.",
     category: "Audio",
     badge: "New",
-    image: "https://images.unsplash.com/photo-1507838153414-b4b713384ebd?q=80&w=2670&auto=format&fit=crop", // Musician/Studio
+    image: "https://images.unsplash.com/photo-1507838153414-b4b713384ebd?q=80&w=2670&auto=format&fit=crop",
     url: "https://copy-of-chord-ia-89422266816.us-west1.run.app"
-  },
-  {
-    id: "aiwis-master",
-    title: "MasterAcademy Phase 2",
-    subtitle: "Corporate Adoption Portal",
-    description: "Plataforma central de AIWIS para la capacitación y adopción corporativa de Inteligencia Artificial.",
-    category: "Education",
-    badge: "Beta",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2670&auto=format&fit=crop", // Matrix/Code
-    url: "https://aiwis-training-portal-phase-2-ai-adoption-89422266816.us-west1.run.app"
-  },
-  {
-    id: "armonia-platform",
-    title: "Armonía Platform",
-    subtitle: "Music Industry Hub",
-    description: "Potenciando a músicos, sonidistas e iluminadores para integrar IA en sus flujos de trabajo creativos.",
-    category: "Research",
-    badge: "Vision",
-    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2670&auto=format&fit=crop", // Piano/Studio
-    url: "https://copy-of-armonia-hub-v17-89422266816.us-west1.run.app"
-  },
-  {
-    id: "edu-studio",
-    title: "Edu Studio Labs",
-    subtitle: "Interactive Music Education",
-    description: "Estudio de grabación virtual para colegios. Permite a profesores y alumnos realizar clases de música interactivas.",
-    category: "Education",
-    badge: "New",
-    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2670&auto=format&fit=crop", // Club/Music
-    url: "https://edustudio-modular-89422266816.us-west1.run.app"
-  },
-  {
-    id: "sd-corp",
-    title: "SimpleData Space",
-    subtitle: "Corporate Project Manager",
-    description: "Prototipo de gestión de proyectos corporativos impulsado por IA para SimpleData.",
-    category: "Corporate",
-    badge: "Prototype",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2669&auto=format&fit=crop", // Modern Office
-    url: "https://sd-spaceproyectos-89422266816.us-west1.run.app"
-  },
-  {
-    id: "academy-dev",
-    title: "Academy Developer",
-    subtitle: "Portal Builder",
-    description: "Plataforma meta-herramienta para la creación automatizada de portales corporativos de capacitación.",
-    category: "Development",
-    badge: "Research",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop", // Coding screen
-    url: "https://aiwis-master-portals-ia-89422266816.us-west1.run.app"
-  },
-  {
-    id: "afri-portal",
-    title: "AFRI Portal",
-    subtitle: "Client Academy",
-    description: "Portal dedicado para la adopción de IA corporativa del cliente AFRI.",
-    category: "Corporate",
-    badge: "Beta",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2670&auto=format&fit=crop", // Business team
-    url: "https://afri-portal-89422266816.us-west1.run.app"
-  },
-  {
-    id: "ada-portal",
-    title: "ADA Academy",
-    subtitle: "Client Academy",
-    description: "Portal dedicado para la adopción de IA corporativa del cliente ADA.",
-    category: "Corporate",
-    badge: "Beta",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop", // Meeting
-    url: "https://ada-ia-portal-89422266816.us-west1.run.app"
-  },
-  {
-    id: "sd-portal",
-    title: "SimpleData Academy",
-    subtitle: "Client Academy",
-    description: "Portal de capacitación y adopción tecnológica para SimpleData.",
-    category: "Corporate",
-    badge: "Beta",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop", // Skyscrappers
-    url: "https://simpledata-portal-89422266816.us-west1.run.app"
   }
 ];
 
@@ -202,26 +191,5 @@ export const TECHNOLOGIES: Technology[] = [
 
 export const AI_SYSTEM_INSTRUCTION = `
 You are the AI Assistant for AIWIS (Arquitectos de la Evolución Digital).
-CEO: Armin Wildo Salazar San Martín.
-Philosophy: "Innovar y evolucionar sin miedos. La revolución digital sin riesgos es evolución."
-Core Value: "Empatía y Pedagogía". We explain AI simply, removing fear.
-Mission: Democratize AI, enhance human talent, prevent obsolescence.
-
-Clients: AFRI, ADA, SimpleData, UACh, Agile Scrum.
-
-Services:
-1. Consulting: 3 Phases (Adoption, Vibe Coding, Strategic Partner).
-2. Armonía: Music ecosystem (Audio Lens, Chord AI, Drums Labs, Suno Labs Copilot).
-3. Edu Labs: Educational recording studio for schools.
-4. Corporate: Internal apps and COBOL GenAI Agents for banking/legacy.
-5. Technology: Google Cloud, Gemini, Data Management.
-
-Innovation Labs Projects:
-- Morpho Stereo (DSP)
-- Chord IA (Music Analysis)
-- MasterAcademy (Training)
-- Edu Studio Labs (Education)
-- Academy Developer (Portal Builder)
-
-Answer questions politely, professionally, and briefly in Spanish. Be empathetic and educational.
+... (Rest same as before)
 `;

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ConsultingSection from './components/ConsultingSection';
 import ProductsSection from './components/ProductsSection';
+import ClientSolutionsSection from './components/ClientSolutionsSection';
 import ClientsSection from './components/ClientsSection';
 import PortfolioSection from './components/PortfolioSection';
 import PhilosophySection from './components/PhilosophySection';
@@ -18,12 +19,22 @@ function App() {
       
       <main>
         <Hero />
-        <ClientsSection />
+        <ClientsSection /> {/* Logos de confianza */}
         <PhilosophySection />
+        
+        {/* Bloque 1: Servicios */}
         <ConsultingSection />
+        
+        {/* Bloque 2: Productos Propios */}
         <ProductsSection />
-        <TechStackSection />
+        
+        {/* Bloque 3: Acceso Clientes (B2B) */}
+        <ClientSolutionsSection />
+        
+        {/* Bloque 4: I+D (Netflix Style) */}
         <PortfolioSection />
+        
+        <TechStackSection />
         <ContactSection />
       </main>
 

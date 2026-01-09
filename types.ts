@@ -32,6 +32,20 @@ export interface Client {
   initials: string;
 }
 
+// New Interface for Grouped Client Solutions
+export interface ClientSolution {
+  clientId: string;
+  clientName: string;
+  description: string;
+  logoUrl?: string;
+  apps: {
+    title: string;
+    type: 'Portal' | 'App' | 'Dashboard';
+    url: string;
+    image: string;
+  }[];
+}
+
 export interface PortfolioItem {
   id: number;
   title: string;
