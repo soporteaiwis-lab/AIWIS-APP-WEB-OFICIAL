@@ -1,67 +1,74 @@
 import React from 'react';
 import { CONSULTING_PHASES } from '../constants';
-import { Zap, Code, Handshake, ChevronRight } from 'lucide-react';
+import { Zap, Code, Handshake, ChevronRight, ArrowRight } from 'lucide-react';
 
 const icons: Record<string, React.ReactNode> = {
-  Zap: <Zap className="w-7 h-7" />,
-  Code: <Code className="w-7 h-7" />,
-  Handshake: <Handshake className="w-7 h-7" />
+  Zap: <Zap className="w-6 h-6" />,
+  Code: <Code className="w-6 h-6" />,
+  Handshake: <Handshake className="w-6 h-6" />
 };
 
 const ConsultingSection: React.FC = () => {
   return (
-    <section id="consultoria" className="py-32 relative bg-slate-950">
-      {/* Ambient Glows */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 -left-64 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-1/3 -right-64 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-[120px]"></div>
-      </div>
-
+    <section id="consultoria" className="py-24 relative bg-slate-950 border-t border-slate-900">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <span className="text-cyan-500 font-semibold tracking-widest uppercase text-sm">Metodología AIWIS</span>
-          <h2 className="text-4xl md:text-6xl font-display font-bold mt-3 mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
-            Modelo de Consultoría
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            Transformamos empresas mediante un camino estructurado de 3 fases, integrando la IA en el ADN corporativo sin fricción.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {CONSULTING_PHASES.map((phase, index) => (
-            <div key={phase.id} className="relative group">
-              
-              {/* Card Container */}
-              <div className="h-full bg-slate-900/40 backdrop-blur-sm border border-slate-800 p-8 rounded-3xl hover:border-blue-500/50 hover:bg-slate-900/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(59,130,246,0.2)] flex flex-col group">
-                
-                {/* Icon */}
-                <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border border-slate-700 flex items-center justify-center text-blue-400 mb-8 group-hover:scale-110 group-hover:border-blue-500/50 group-hover:text-cyan-400 transition-all duration-500 shadow-lg">
-                  {icons[phase.iconName]}
-                </div>
-                
-                {/* Content */}
-                <div className="mb-2 flex items-center gap-3">
-                  <span className="bg-blue-900/30 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-800/50">
-                    FASE 0{index + 1}
-                  </span>
-                </div>
-                
-                <h3 className="text-2xl font-bold text-white mb-2">{phase.title}</h3>
-                <h4 className="text-lg text-slate-400 font-medium mb-6 font-display">{phase.subtitle}</h4>
-                
-                <p className="text-slate-400 text-base leading-relaxed flex-grow">
-                  {phase.description}
+        
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+            <div className="md:w-2/3">
+                <span className="text-purple-400 font-bold tracking-widest uppercase text-xs mb-2 block">Metodología AIWIS</span>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+                    Ruta de <span className="text-purple-500">Transformación</span>
+                </h2>
+                <p className="text-slate-400 mt-4 text-lg">
+                    No implantamos tecnología, desarrollamos capacidades. Un proceso de 3 fases diseñado para eliminar la fricción del cambio.
                 </p>
-
-                {/* Decorative Elements */}
-                <div className="mt-8 pt-6 border-t border-slate-800 flex items-center text-sm text-blue-500 font-semibold opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300">
-                  Saber más <ChevronRight className="w-4 h-4 ml-1" />
-                </div>
-              </div>
             </div>
-          ))}
+            <div className="md:w-1/3 text-right">
+                 <button className="text-white border border-white/20 px-6 py-3 rounded-full hover:bg-white hover:text-slate-900 transition-all font-medium">
+                    Ver casos de éxito
+                 </button>
+            </div>
         </div>
+
+        {/* Timeline Visualization */}
+        <div className="relative">
+            {/* Connecting Line (Desktop) */}
+            <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-purple-900 via-blue-900 to-slate-800 z-0"></div>
+
+            <div className="grid md:grid-cols-3 gap-12">
+                {CONSULTING_PHASES.map((phase, index) => (
+                    <div key={phase.id} className="relative z-10 group">
+                        {/* Phase Dot */}
+                        <div className="w-24 h-24 mx-auto md:mx-0 bg-slate-950 border-4 border-slate-900 rounded-full flex items-center justify-center mb-8 relative group-hover:scale-110 transition-transform duration-300">
+                             <div className={`absolute inset-0 rounded-full opacity-20 group-hover:opacity-100 transition-opacity blur-md ${index === 0 ? 'bg-purple-600' : index === 1 ? 'bg-blue-600' : 'bg-green-600'}`}></div>
+                             <div className="relative bg-slate-900 w-full h-full rounded-full flex items-center justify-center border border-slate-700">
+                                 <span className={`text-white transition-colors ${index === 0 ? 'group-hover:text-purple-400' : index === 1 ? 'group-hover:text-blue-400' : 'group-hover:text-green-400'}`}>
+                                     {icons[phase.iconName]}
+                                 </span>
+                             </div>
+                             {/* Number Badge */}
+                             <div className="absolute -top-2 -right-2 w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center text-xs font-bold text-white border border-slate-600">
+                                 {index + 1}
+                             </div>
+                        </div>
+
+                        {/* Content Card */}
+                        <div className="bg-slate-900/50 backdrop-blur border border-slate-800 p-8 rounded-2xl hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
+                            <h3 className="text-xl font-bold text-white mb-2">{phase.title}</h3>
+                            <p className="text-sm font-bold text-slate-500 uppercase tracking-wide mb-4">{phase.subtitle}</p>
+                            <p className="text-slate-400 leading-relaxed text-sm flex-grow">
+                                {phase.description}
+                            </p>
+                            
+                            <div className="mt-6 pt-4 border-t border-slate-800/50 flex items-center text-sm font-semibold text-white opacity-50 group-hover:opacity-100 transition-opacity">
+                                Detalles <ArrowRight className="w-4 h-4 ml-2" />
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
       </div>
     </section>
   );

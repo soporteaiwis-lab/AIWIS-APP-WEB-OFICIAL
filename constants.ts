@@ -47,49 +47,51 @@ export const CONSULTING_PHASES: ServicePhase[] = [
   }
 ];
 
-// 1. PRODUCTOS PROPIOS (PLATAFORMAS AIWIS)
+// 1. PRODUCTOS PROPIOS (PLATAFORMAS AIWIS - UPDATED PER SCREENSHOTS)
 export const PRODUCTS: Product[] = [
   {
     id: "armonia",
-    title: "Ecosistema ARMONÍA",
-    category: "Música y Entretenimiento",
-    description: "Plataforma diseñada para evitar la obsolescencia de productores y músicos. Fusionamos la creatividad humana con algoritmos de composición y análisis acústico avanzado.",
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2670&auto=format&fit=crop",
+    title: "ArmonIA 17",
+    category: "Investigación Musical & Producción",
+    description: "Plataforma de producción musical híbrida. No buscamos reemplazar al músico, sino evitar su obsolescencia mediante la co-creación. Un 'Copiloto' creativo que integra Suno, análisis espectral y baterías generativas para potenciar el talento humano.",
+    image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=2670&auto=format&fit=crop", // Abstract Audio Visualization to represent the DAW
     link: "https://copy-of-armonia-hub-v17-89422266816.us-west1.run.app/",
     features: [
-      { name: "Audio Lens", description: "Asistente experto en ingeniería de sonido." },
-      { name: "Chord AI", description: "Detección y transcripción de armonías en tiempo real." },
-      { name: "Drums Labs", description: "Módulo de percusión asistido por IA." },
-      { name: "Suno Labs Copilot", description: "Simulador para crear maquetas antes de usar Suno." }
+      { name: "Suno Lab Copilot", description: "Interfaz de chat para ingeniería de prompts musicales." },
+      { name: "Drum Lab", description: "Diseño de kits de batería y secuenciación rítmica visual." },
+      { name: "Audio Lens", description: "Análisis de frecuencias y visión artificial aplicada al audio." },
+      { name: "Filosofía Híbrida", description: "Herramientas de apoyo para que el músico componga y toque real." }
     ]
   },
   {
     id: "edulabs",
-    title: "EDU LABS",
-    category: "Transformación Educativa",
-    description: "Estudio de Grabación Digital Educativo. Democratizamos el acceso a herramientas de producción de nivel profesional para colegios y liceos.",
-    image: "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?q=80&w=2670&auto=format&fit=crop",
+    title: "Edu Studio Labs",
+    category: "Educación Musical 3.0",
+    description: "Plataforma educativa única en su especie. Los alumnos cantan, tocan y componen usando la tecnología como puente. Un sistema progresivo en 3 niveles: Experimentar, Crear y Profesionalizar el talento joven.",
+    image: "https://images.unsplash.com/photo-1516280440614-6697288d5d38?q=80&w=2670&auto=format&fit=crop", // Classroom/Music Tech
     link: "https://edustudio-modular-89422266816.us-west1.run.app/",
     features: [
-      { name: "Ecosistema de Clases", description: "Herramientas para teoría musical y composición." },
-      { name: "Acceso Democrático", description: "Tecnología de estudio profesional en el aula." }
+      { name: "3 Niveles Evolutivos", description: "Explorer (Juego), Maker (Creación), Pro (Técnica)." },
+      { name: "Cuaderno Digital", description: "Gestión de tareas y proyectos musicales por curso." },
+      { name: "Editor Creativo", description: "Piano Roll, Secuenciador y Generador de Armonía." },
+      { name: "Rúbricas Mineduc", description: "Evaluación automatizada alineada al currículum." }
     ]
   },
    {
     id: "academy-dev",
     title: "Academy Developer",
-    category: "Desarrollo",
-    description: "Meta-plataforma para la creación automatizada de portales corporativos de capacitación. Genera entornos de aprendizaje a medida en minutos.",
+    category: "Infraestructura Corporativa",
+    description: "Meta-plataforma para la creación automatizada de portales corporativos. Permite a grandes empresas desplegar sus propias academias de IA internas en tiempo récord.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop",
     link: "https://aiwis-master-portals-ia-89422266816.us-west1.run.app",
     features: [
         { name: "Generador de Portales", description: "Despliegue rápido de LMS corporativos." },
-        { name: "Integración de Contenidos", description: "Gestión centralizada de recursos." }
+        { name: "Gestión de Contenidos", description: "Centralización de recursos formativos." }
     ]
   }
 ];
 
-// 2. SOLUCIONES DE CLIENTES (AGRUPADAS POR EMPRESA)
+// 2. SOLUCIONES DE CLIENTES
 export const CLIENT_SOLUTIONS: ClientSolution[] = [
   {
     clientId: "simpledata",
@@ -157,8 +159,18 @@ export const CLIENT_SOLUTIONS: ClientSolution[] = [
   }
 ];
 
-// 3. INNOVATION LABS (PROTOTIPOS & EXPERIMENTOS)
+// 3. INNOVATION LABS
 export const INNOVATION_PROJECTS: InnovationProject[] = [
+  {
+    id: "armonia-platform",
+    title: "ArmonIA Platform",
+    subtitle: "Music Industry Hub",
+    description: "El laboratorio central donde integramos los últimos modelos de audio generativo para potenciar a músicos, sonidistas e iluminadores.",
+    category: "Research",
+    badge: "Vision",
+    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2670&auto=format&fit=crop", // Piano/Studio
+    url: "https://copy-of-armonia-hub-v17-89422266816.us-west1.run.app"
+  },
   {
     id: "morpho",
     title: "Morpho Stereo",
@@ -190,6 +202,9 @@ export const TECHNOLOGIES: Technology[] = [
 ];
 
 export const AI_SYSTEM_INSTRUCTION = `
-You are the AI Assistant for AIWIS (Arquitectos de la Evolución Digital).
-... (Rest same as before)
+You are the AI Assistant for AIWIS.
+Core Focus:
+1. "ArmonIA 17": Hybrid music production platform. NOT replacing musicians, but empowering them. Tools: Suno Lab, Drum Lab, Audio Lens.
+2. "Edu Studio Labs": Educational music platform with 3 levels: Explorer (Play), Maker (Create), Pro (Technical). Students sing, play, and compose real music assisted by AI.
+3. Consulting: Empathy & Pedagogy.
 `;
